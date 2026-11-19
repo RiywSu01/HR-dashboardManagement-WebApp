@@ -7,8 +7,8 @@ interface statCard{
 
 export default function statsCard({name, value, icon}: statCard){
     return(
-        <div className="bg-white card-1 grow size-45 flex flex-col justify-center p-4 border border-solid border-red-500 rounded-3xl">
-            <div className="flex justify-center items-center rounded-xl bg-white size-10 mb-2 ">
+        <div className="h-[120px] bg-white rounded-3xl p-4 flex flex-col justify-center border border-solid border-red-500">
+            <div className="mb-2">
                 {icon}
             </div>
             <div>

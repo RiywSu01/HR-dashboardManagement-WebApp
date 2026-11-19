@@ -9,6 +9,16 @@ import {
   ResponsiveContainer,
 } from "recharts"
 
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 const data = [
   { name: "Malware", value: 400 },
   { name: "Phishing", value: 300 },
@@ -25,30 +35,40 @@ const COLORS = [
 
 export default function DashboardPieChart() {
   return (
-    <div className="h-[350px] w-full">
-      <ResponsiveContainer width="100%" height="100%">
-        <PieChart>
-          <Pie
-            data={data}
-            cx="50%"
-            cy="50%"
-            dataKey="value"
-            nameKey="name"
-            outerRadius={100}
-            label
-          >
-            {data.map((entry, index) => (
-              <Cell
-                key={entry.name}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-          </Pie>
+    <Card className="border border-solid border-blue-500">
+      <CardHeader>
+        <CardTitle>Threat Distribution</CardTitle>
+        <CardDescription>
+          Detected threats by category
+        </CardDescription>
+      </CardHeader>
 
-          <Tooltip />
-          <Legend />
-        </PieChart>
-      </ResponsiveContainer>
-    </div>
+      <CardContent className=" border border-solid border-red-500">
+        <div className="h-[300px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <PieChart>
+              <Pie
+                data={data}
+                dataKey="value"
+                nameKey="name"
+                cx="50%"
+                cy="50%"
+                outerRadius={100}
+              >
+                {data.map((entry, index) => (
+                  <Cell
+                    key={entry.name}
+                    fill={COLORS[index % COLORS.length]}
+                  />
+                ))}
+              </Pie>
+
+              <Tooltip />
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+      </CardContent>
+    </Card>
   )
 }

@@ -1,10 +1,12 @@
 import Image from "next/image";
 
+import StatsCard from "./components/dashboard/statsCard";
+import { UserRound, UserRoundPlus, BriefcaseBusiness, Clock } from "lucide-react";
+import Charts from "./components/dashboard/pie-chart";
+
 export default function Home() {
-  return (
-    <div>
-      HOME
-    </div>
+  return(
+    <div>HOME</div>
   //   <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
   //     <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
   //       <Image
